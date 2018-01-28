@@ -5,26 +5,14 @@
     <v-layout row>
       <v-text-field
         label="Imagem"
-        v-model="imagem"
-        name="input1"
-        required
+        v-model="dados.imagem"
       ></v-text-field>
     </v-layout>
 
     <v-layout row>
     <v-text-field
       label="Nome"
-      v-model="nome"
-      name="input2"
-      required
-    ></v-text-field>
-    </v-layout>
-
-    <v-layout row>
-    <v-text-field
-      label="Descrição"
-      v-model="descricao"
-      name="input3"
+      v-model="dados.nome"
       required
     ></v-text-field>
     </v-layout>
@@ -32,19 +20,32 @@
     <v-layout row>
     <v-text-field
       label="Preço"
-      v-model="preco"
-      name="input4"
+      v-model="dados.preco"
       required
     ></v-text-field>
     </v-layout>
     
+    <v-layout row>
+    <v-text-field
+      label="Descrição:"
+      v-model="dados.descricao"
+      required
+    ></v-text-field>
+    </v-layout>
+
+    <v-layout row>
+    <v-text-field
+      label="Dados Tecnicos:"
+      v-model="dados.dadostecnicos"
+      required
+    ></v-text-field>
+    </v-layout>
     <v-btn
       @click="criarProduto()"
     >
      {{submit}}
     </v-btn>
  </v-form>
-{{nome}}
 </template>  
   
   </v-container>

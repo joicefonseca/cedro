@@ -1,23 +1,9 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" fixed app>
       <v-list>
-        <v-list-tile
-          value="true"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <v-btn block large color="secundary" @click="cadastrar()">Cadastrar</v-btn>
+        <v-btn block large color="secundary" @click="produtoscadastrados()">Produtos Cadastrados</v-btn>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
@@ -44,11 +30,19 @@ export default {
       fixed: false,
       items: [{
         icon: 'bubble_chart',
-        title: 'Inspire'
+        title: 'Monitores'
       },
       {
         icon: 'bubble_chart',
-        title: 'Inspire'
+        title: 'Teclados'
+      },
+      {
+        icon: 'bubble_chart',
+        title: 'Mouse'
+      },
+      {
+        icon: 'bubble_chart',
+        title: 'Fones de Ouvido'
       }],
       miniVariant: false,
       right: true,
@@ -56,6 +50,15 @@ export default {
       title: 'Vuetify.js'
     }
   },
-  name: 'App'
+  name: 'App', 
+  methods: {
+    cadastrar(){
+     this.$router.push('/cadastro')
+    },
+    produtoscadastrados(){
+      this.$router.push('/')
+    }
+  }
 }
+
 </script>

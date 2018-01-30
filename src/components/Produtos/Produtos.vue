@@ -10,8 +10,8 @@
         </v-card-title>
         <v-card-text>
           <div>
-            <div>{{item.resumo}}</div>
-            <div>${{item.valor}}</div>
+            <div>{{item.descricao}}</div>
+            <div><b>R${{item.preco}}</b></div>
           </div>
         </v-card-text>
         <v-card-actions xs6>

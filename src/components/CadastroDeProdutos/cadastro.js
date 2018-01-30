@@ -9,30 +9,28 @@ export default {
         return {
             submit : 'Enviar',
             dados:{ 
-                imagem: "",
                 nome: "",
                 descricao: "",
                 preco: "",
-                dadostecnicos: "",
-            } 
-           
+                dadostecnicos: "", 
+            },
+            alertSucesso: false,
+            alertErro: false,
         }
     }, 
+    mounted(){
+        console.log(this.produtos)
+    },
     methods: {
         criarProduto(){
-            // var dados={
-            //     nome: this.nome,
-            //     descricao: this.descricao,
-            //     preco: this.preco,
-            //     dadostecnicos: this.dadostecnicos
-            // }
-            // console.log(dados)
+            this.alertSucesso= false
+            this.alertErro= false
             tabelaProdutos.push(this.dados).then((resultado)=>{
-                alert("Cadastro realizado com sucesso!")
-                console.log(resultado)
+                this.alertSucesso= true
+                this.alertErro= false
             }).catch((resultado)=>{
-                alert("Cadastro não enviado!")
-                console.log(resultado)
+                this.alertSucesso= false
+                this.alertErro= true
             })
 
 

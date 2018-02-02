@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Produtos from '@/components/Produtos/Produtos.vue'
+import ProdutosAdmin from '@/components/ProdutosAdmin/ProdutosAdmin.vue'
+import ProdutosCliente from '@/components/ProdutosCliente/ProdutosCliente.vue'
 import cadastro from '@/components/CadastroDeProdutos/cadastro.vue'
 import ('vuetify/dist/vuetify.min.css')
 Vue.use(Router)
@@ -8,10 +9,17 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/produtos',
-      name: 'Produtos',
-      component: Produtos
+      path: '/produtosAdmin',
+      name: 'ProdutosAdmin',
+      component: ProdutosAdmin
     },
+
+    {
+      path: '/produtosCliente',
+      name: 'ProdutosCliente',
+      component: ProdutosCliente
+    },
+
     {
       path: '/cadastro',
       name: 'Cadastro',

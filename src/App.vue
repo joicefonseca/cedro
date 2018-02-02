@@ -51,7 +51,8 @@
         </v-flex>
     </v-layout>
     <v-flex v-if="loginSucesso == true">
-      <paginaPrincipal></paginaPrincipal>
+      <paginaPrincipalAdm v-if="usuarioAdm == true"></paginaPrincipalAdm>
+      <paginaPrincipalCliente v-if="usuarioAdm== false" ></paginaPrincipalCliente>
     </v-flex>
     <img src="./assets/fundo.jpg" id="imagemFundo" v-if="loginSucesso == false">
   </v-app>
@@ -80,10 +81,11 @@
 
 
 <script>
-import paginaPrincipal from './components/paginaPrincipal/paginaPrincipal.vue'
+import paginaPrincipalAdm from './components/paginaPrincipalAdm/paginaPrincipalAdm.vue'
+import paginaPrincipalCliente from './components/paginaPrincipalCliente/paginaPrincipalCliente.vue'
 import firebase from 'firebase'
 export default {
-  components:{paginaPrincipal},
+  components:{paginaPrincipalAdm, paginaPrincipalCliente},
   data(){
     return{
       loginSucesso: false,
@@ -97,6 +99,7 @@ export default {
       cadastroSucesso: '',
       cadastroErro: '',
       cardCadastro: false,
+      usuarioAdm: null,
     }
   },
   methods: {
@@ -137,8 +140,14 @@ export default {
       .then((resposta)=> {
             this.alertSucesso= true
             this.alertErro= false
-            console.log(resposta)
+            console.log(resposta.email)
             this.loginSucesso= true
+            if(resposta.email== 'admin@gmail.com'){
+              this.usuarioAdm=true
+            } else {
+              this.usuarioAdm = false
+
+            }
         })
         .catch((resposta)=> {
             this.alertSucesso= false

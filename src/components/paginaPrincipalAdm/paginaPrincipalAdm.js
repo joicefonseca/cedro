@@ -32,7 +32,7 @@ export default {
        this.$router.push('/cadastro')
       },
       produtoscadastrados(){
-        this.$router.push('/produtos')
+        this.$router.push('/produtosAdmin')
       },
       sair(){
         this.$router.push('/')

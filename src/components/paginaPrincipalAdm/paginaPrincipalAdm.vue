@@ -21,5 +21,5 @@
     </v-app>
 </template>
 
-<style scoped src="./paginaPrincipal.css"></style>
-<script type="text/javascript" src="./paginaPrincipal.js">
+<style scoped src="./paginaPrincipalAdm.css"></style>
+<script type="text/javascript" src="./paginaPrincipalAdm.js">

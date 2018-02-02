@@ -17,7 +17,6 @@
         <v-card-actions xs6>
           <v-btn flat color="pink" @click="detalhesProduto(item)">Mais Informações</v-btn>
           <v-btn flat color="pink" @click="comprarProduto(item.preco)">Comprar</v-btn>
-          <v-btn flat color="pink">Editar</v-btn>
           <v-btn flat color="pink" @click="excluirProduto(item['.key'])">Excluir</v-btn>
         </v-card-actions>
       </v-card>
@@ -67,12 +66,12 @@
                   <v-select :items="parcelas" v-model="pagamento3" row v-if="pagamento2=='aprazo'&& pagamento1=='cartao'"></v-select>
                   <div v-if="pagamento2=='avista'&& pagamento1=='cartao'">
                     <p>
-                      {{valorProduto}}
+                      R$ {{valorProduto}}
                     </p>
                   </div>
                   <div v-if="pagamento1=='dinheiro'">
                     <p>
-                      {{valorProduto-(valorProduto*0.1)}}
+                      R$ {{valorProduto-(valorProduto*0.1)}}
                     </p>
                   </div>
                   <div>
@@ -83,7 +82,6 @@
             </v-container>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="primary" block @click="finalizarCompra()">Finalizar Compra</v-btn>
             <v-btn color="error" block @click.stop="formaCompra=false">Fechar</v-btn>
           </v-card-actions>
         </v-card>
@@ -95,5 +93,5 @@
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped src="./Produtos.css"></style>
-<script type="text/javascript" src="./Produtos.js">
+<style scoped src="./ProdutosAdmin.css"></style>
+<script type="text/javascript" src="./ProdutosAdmin.js">
